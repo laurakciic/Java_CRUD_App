@@ -1,16 +1,18 @@
 package kovacic.ljetnizadatak;
 
-import java.util.ArrayList;
+import java.awt.Desktop;
+import java.net.URI;
+//import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 public class Start {
 
-	private List<Student> studenti;
+	//private List<Student> studenti;
 
 	public Start() {
-		studenti = new ArrayList<Student>();
+		//studenti = new ArrayList<Student>();
 		izbornik();
 
 	}
@@ -59,13 +61,24 @@ public class Start {
 		}
 		izbornik();
 	}
+	
+	private void adresa(String url) {
+		try {
+			Desktop d = Desktop.getDesktop();
+			d.browse(new URI(url));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 	private void otvoriGitKod() {
-
+		adresa("https://github.com/laurakciic/Java_CRUD_App");
 	}
 
 	private void otvoriEraDijagram() {
-
+		adresa("https://github.com/laurakciic/hellojp22/blob/master/era.jpg");
 	}
 
 	private void pregledStudenata() {
